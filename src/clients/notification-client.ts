@@ -6,8 +6,6 @@ import {
 import { getUserNotificationDetails } from "@/clients/notification";
 import { APP_URL } from "@/utils/config";
 
-const appUrl = process.env.NEXT_PUBLIC_URL || APP_URL;
-
 type SendFrameNotificationResult =
   | {
       state: "error";
@@ -44,7 +42,7 @@ export async function sendFrameNotification({
       notificationId: crypto.randomUUID(),
       title,
       body,
-      targetUrl: appUrl,
+      targetUrl: APP_URL,
       tokens: [notificationDetails.token],
     } satisfies SendNotificationRequest),
   });
