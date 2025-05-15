@@ -1,7 +1,6 @@
 import type { FrameNotificationDetails } from "@farcaster/frame-sdk";
 import { redis } from "@/clients/redis";
-
-const baseKey = "fappstore";
+import { APP_NAME } from "@/utils/config";
 
 interface NotificationSubscription {
   fid: string;
@@ -10,7 +9,7 @@ interface NotificationSubscription {
 }
 
 function getUserNotificationDetailsKey(fid: number): string {
-  return `${baseKey}:user:${fid}`;
+  return `${APP_NAME}:user:${fid}`;
 }
 
 export async function getAllUserNotificationDetails(): Promise<
@@ -20,13 +19,13 @@ export async function getAllUserNotificationDetails(): Promise<
     return [];
   }
 
-  const keys = await redis.keys(`${baseKey}:user:*`);
+  const keys = await redis.keys(`${APP_NAME}:user:*`);
   const notificationDetails = await redis.mget<FrameNotificationDetails[]>(
     keys
   );
 
   return keys.map((key: string, index: number) => {
-    const fid = key.replace(`${baseKey}:user:`, "");
+    const fid = key.replace(`${APP_NAME}:user:`, "");
     return {
       fid,
       url: notificationDetails[index].url,
