@@ -12,6 +12,14 @@ export const APP_FRAME_PRIMARY_CATEGORY = "utility";
 export const APP_FRAME_TAGS = ["farcaster", "app"];
 // More info // https://miniapps.farcaster.xyz/docs/specification#frame
 
+export const FARCASTER_ACCOUNT_ASSOCIATION = {
+  header:
+    "eyJmaWQiOjEyNTgwLCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4NTQzOTY4YzU4YTRlYTEyNTllMTIxOUI2MjE5MjBDMjQ2OTMxRGYxRiJ9",
+  payload: "eyJkb21haW4iOiJmYXBwLm5leHRoLmRldiJ9",
+  signature:
+    "MHg2ZmE3MGFmMWY4NzNmNzdiYjY2NDY2ODFjZmU2MTZhYmUyN2NmZjg4MGM1M2FmMDdlOGIxNTkzNWI2NzQ4NWRjN2Y4YTk2MDY5MDU5N2ZlYjJhMWJjZTdiMTE0OGQ1MzFkYzIzZTgyNmFhNTUzYTI1YjgzOWM5Y2UzZDZiYTM4MzFj",
+};
+
 export const SOCIAL_TWITTER = "wslyvh";
 export const SOCIAL_FARCASTER = "wslyvh.eth";
 export const SOCIAL_GITHUB = "wslyvh/fapp-starter";

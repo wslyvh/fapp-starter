@@ -7,15 +7,12 @@ import {
   APP_NAME,
   APP_URL,
   APP_WEBHOOK,
+  FARCASTER_ACCOUNT_ASSOCIATION,
 } from "@/utils/config";
 
 export async function GET() {
   return Response.json({
-    accountAssociation: {
-      header: process.env.FARCASTER_HEADER,
-      payload: process.env.FARCASTER_PAYLOAD,
-      signature: process.env.FARCASTER_SIGNATURE,
-    },
+    accountAssociation: FARCASTER_ACCOUNT_ASSOCIATION,
     frame: {
       version: APP_FRAME_VERSION,
       name: APP_NAME,
