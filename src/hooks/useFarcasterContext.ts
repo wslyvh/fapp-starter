@@ -6,7 +6,13 @@ export function useFarcasterContext(enabled: boolean = true) {
   return useQuery({
     queryKey: ["frames", "context"],
     queryFn: async () => {
-      return sdk.context;
+      const context = await sdk.context;
+      if (!context) {
+        console.log("No Farcaster context available...");
+        return null;
+      }
+
+      return context;
     },
     staleTime: DEFAULT_CACHE_TIME,
     enabled,
