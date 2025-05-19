@@ -1,8 +1,10 @@
 export const APP_EMOJI = "💦";
 export const APP_NAME = "Fapp Starter";
 export const APP_DESCRIPTION = "Quickly ship Farcaster Apps";
-export const APP_DOMAIN = "fapp.nexth.dev";
-export const APP_URL = `https://${APP_DOMAIN}`;
+export const APP_DOMAIN =
+  process.env.NEXT_PUBLIC_APP_DOMAIN || "fapp.nexth.dev";
+export const APP_URL =
+  process.env.NEXT_PUBLIC_APP_URL || `https://${APP_DOMAIN}`;
 
 // More info // https://miniapps.farcaster.xyz/docs/specification#frame
 export const APP_ICON = `${APP_URL}/icon.png`; // 1024 x 1024 for Farcaster
