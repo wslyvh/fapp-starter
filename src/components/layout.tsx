@@ -46,7 +46,7 @@ export function Layout(props: PropsWithChildren) {
             GitHub
           </Link>
           <Link
-            href={`https://warpcast.com/${SOCIAL_FARCASTER}`}
+            href={`https://farcaster.xyz/${SOCIAL_FARCASTER}`}
             target="_blank"
             rel="noopener noreferrer"
           >

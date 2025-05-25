@@ -10,14 +10,14 @@ export function useOpenFrameUrl() {
     if (isFarcasterApp) {
       try {
         await sdk.actions.openUrl(
-          `https://warpcast.com/~/frames/launch?url=${frameUrl}`
+          `https://farcaster.xyz/~/frames/launch?url=${frameUrl}`
         );
       } catch (error) {
         console.error("Failed to open frame URL:", error);
       }
     } else {
       window.open(
-        `https://warpcast.com/?launchFrameUrl=${encodeURIComponent(frameUrl)}`,
+        `https://farcaster.xyz/?launchFrameUrl=${encodeURIComponent(frameUrl)}`,
         "_blank"
       );
     }
